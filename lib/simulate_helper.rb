@@ -128,7 +128,7 @@ def json_load(json_file, periods, sport)
   
   games = JSON.parse(File.read(json_file))
   games = games.select { |g| g["status"] == "closed" }
-
+  
   games.each do |game|
     processed_games << process(game, periods, sport)
   end

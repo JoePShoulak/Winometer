@@ -65,8 +65,8 @@ def menu
     puts "Sports:"
     puts "\t1: NFL"
     puts "\t2: NBA"
-    puts
-    print "Choice: "
+
+    print "\nChoice: "
     
     sport = STDIN.gets.chomp.to_i
     
@@ -88,9 +88,7 @@ def menu
       it += 1
     end
     
-    puts
-    
-    print "Choice: "
+    print "\nChoice: "
     
     year = STDIN.gets.chomp
     
@@ -109,8 +107,8 @@ def menu
     puts "\t2: 2 Periods"
     puts "\t3: 3 Periods"
     puts "\t4: All of the above"
-    puts
-    print "Choice: "
+
+    print "\nChoice: "
     
     periods = STDIN.gets.chomp
     
@@ -123,8 +121,8 @@ def menu
     puts "verbose:"
     puts "\t1: true"
     puts "\t2: false"
-    puts
-    print "Choice: "
+
+    print "\nChoice: "
     
     verbose = STDIN.gets.chomp.to_i
     
@@ -161,10 +159,11 @@ if ARGV.empty?
   exit
 end
 
-if ARGV[0] == "gui"
+if ARGV[0] == "menu"
   menu
 elsif "NFL, NBA".include? ARGV[0].upcase
   sport = ARGV[0].upcase
+  
   if ARGV[1].to_i.to_s == ARGV[1]
     year = ARGV[1].to_i
   else
@@ -172,6 +171,7 @@ elsif "NFL, NBA".include? ARGV[0].upcase
     puts "simulate.rb SPORT YEAR PERIODS(/ALL) (VERBOSE)"
     exit
   end
+  
   if ARGV[2].to_i.to_s == ARGV[2]
     periods = ARGV[2].to_i
   elsif ARGV[2] == "all"
@@ -181,6 +181,7 @@ elsif "NFL, NBA".include? ARGV[0].upcase
     puts "simulate.rb SPORT YEAR PERIODS(/ALL) (VERBOSE)"
     exit
   end
+  
   if ARGV[3] == "verbose"
     verbose = true
   else
