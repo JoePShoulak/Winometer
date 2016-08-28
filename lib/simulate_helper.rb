@@ -97,6 +97,9 @@ def process(game, periods, sport)
   
   subgame_home.name = home_market + " " + home_name
   subgame_away.name = away_market + " " + away_name
+  
+  subgame_home.points = 0
+  subgame_away.points = 0
     
   game["periods"].length.times do |pe| # For each period
     period = game["periods"][pe]
