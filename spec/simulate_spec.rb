@@ -1,4 +1,4 @@
-require './lib/nfl_helper'
+require './lib/simulate_helper'
 
 subgame1 = Subgame.new
 subgame1.name = "Packers"
